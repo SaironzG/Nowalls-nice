@@ -578,7 +578,7 @@ input[type=checkbox]:checked ~ .toggle .bar3 {
 
 #contact {
   color: white;
-  background-image: url(./image/contact.png);
+  background-image: url(../image/contact.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
