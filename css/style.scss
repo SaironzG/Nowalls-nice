@@ -757,20 +757,16 @@
                 }
             }
         }
-        /* Adjust images section for smaller screens */
         .images {
             flex-direction: row;
             gap: 10px;
         }
     }
-    /* Adjust collector section for smaller screens */
-    /* Adjust passion section for smaller screens */
     
     #passion {
         flex-direction: column;
         padding: 30px;
     }
-    /* Adjust services section for smaller screens */
     
     #services {
         padding: 30px;
@@ -788,7 +784,6 @@
             }
         }
     }
-    /* Adjust subscribe section for smaller screens */
     
     #subscribe {
         flex-direction: column;
@@ -797,7 +792,6 @@
             padding-top: 50px;
         }
     }
-    /* Adjust in-touch section for smaller screens */
     
     #in-touch {
         flex-direction: column;
@@ -812,7 +806,6 @@
             width: 100%;
         }
     }
-    /* Adjust footer for smaller screens */
     
     #contact {
         flex-direction: column;
@@ -825,14 +818,12 @@
             gap: 10px;
         }
     }
-    /* Adjust footer-last for smaller screens */
     
     footer {
         text-align: center;
     }
     
     @media (min-width: 576px) and (max-width: 767px) {
-        /* Adjust hero section for medium screens */
         label {
             .toggle {
                 position: absolute;
@@ -869,7 +860,6 @@
                     }
                 }
             }
-            /* Adjust images section for medium screens */
             .images {
                 flex-direction: row;
                 gap: 15px;
@@ -882,7 +872,6 @@
                 padding-top: 300px;
             }
         }
-        /* Adjust services section for medium screens */
         #services {
             padding: 40px;
             h2 {
@@ -902,7 +891,6 @@
                 }
             }
         }
-        /* Adjust subscribe section for medium screens */
         #subscribe {
             flex-direction: row;
             gap: 10px;
@@ -916,7 +904,6 @@
                 }
             }
         }
-        /* Adjust in-touch section for medium screens */
         #in-touch {
             flex-direction: row;
             gap: 0px;
@@ -931,7 +918,6 @@
                 width: 100%;
             }
         }
-        /* Adjust footer for medium screens */
         #contact {
             flex-direction: row;
             gap: 30px;
@@ -940,14 +926,12 @@
                 gap: 15px;
             }
         }
-        /* Adjust footer-last for medium screens */
         footer {
             text-align: center;
         }
     }
     
     @media (min-width: 768px) and (max-width: 991px) {
-        /* Adjust hero section for large tablets and small laptops */
         label {
             .toggle {
                 display: none;
@@ -1092,7 +1076,6 @@
                 width: auto;
             }
         }
-        /* Adjust collector section for desktops */
         .collector {
             h1 {
                 font-size: 44px;
@@ -1155,7 +1138,6 @@
                 }
             }
         }
-        /* Adjust subscribe section for desktops */
         #subscribe {
             flex-direction: row;
             gap: 30px;
@@ -1163,7 +1145,6 @@
                 padding-top: 40px;
             }
         }
-        /* Adjust in-touch section for desktops */
         #in-touch {
             flex-direction: row;
             gap: 30px;
@@ -1187,14 +1168,12 @@
                 gap: 15px;
             }
         }
-        /* Adjust footer-last for desktops */
         footer {
             text-align: center;
         }
     }
     
     @media (min-width: 1200px) {
-        /* Adjust hero section for large desktops */
         label {
             .toggle {
                 display: none;
@@ -1215,7 +1194,6 @@
                 height: 110px;
                 width: auto;
             }
-            /* Adjust collector section for large desktops */
             .collector {
                 h1 {
                     font-size: 52px;
@@ -1256,12 +1234,10 @@
                 }
             }
         }
-        /* Adjust passion section for large desktops */
         #passion {
             flex-direction: row;
             padding: 40px;
         }
-        /* Adjust services section for large desktops */
         #services {
             padding: 40px;
             h2 {
@@ -1278,7 +1254,6 @@
                 }
             }
         }
-        /* Adjust subscribe section for large desktops */
         #subscribe {
             flex-direction: row;
             gap: 40px;
@@ -1286,7 +1261,6 @@
                 padding-top: 50px;
             }
         }
-        /* Adjust in-touch section for large desktops */
         #in-touch {
             flex-direction: row;
             gap: 100px;
@@ -1301,7 +1275,6 @@
                 width: 100%;
             }
         }
-        /* Adjust footer for large desktops */
         #contact {
             flex-direction: row;
             gap: 40px;
@@ -1310,7 +1283,6 @@
                 gap: 20px;
             }
         }
-        /* Adjust footer-last for large desktops */
         footer {
             text-align: center;
         }

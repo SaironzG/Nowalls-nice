@@ -744,20 +744,16 @@ footer p {
   #hero .collector h6 span {
     font-size: 35px;
   }
-  /* Adjust images section for smaller screens */
   .images {
     flex-direction: row;
     gap: 10px;
   }
 }
-/* Adjust collector section for smaller screens */
-/* Adjust passion section for smaller screens */
 #passion {
   flex-direction: column;
   padding: 30px;
 }
 
-/* Adjust services section for smaller screens */
 #services {
   padding: 30px;
 }
@@ -773,7 +769,6 @@ footer p {
   height: 200px;
 }
 
-/* Adjust subscribe section for smaller screens */
 #subscribe {
   flex-direction: column;
   gap: 20px;
@@ -782,7 +777,6 @@ footer p {
   padding-top: 50px;
 }
 
-/* Adjust in-touch section for smaller screens */
 #in-touch {
   flex-direction: column;
   gap: 20px;
@@ -795,7 +789,6 @@ footer p {
   width: 100%;
 }
 
-/* Adjust footer for smaller screens */
 #contact {
   flex-direction: column;
   gap: 20px;
@@ -808,13 +801,11 @@ footer p {
   gap: 10px;
 }
 
-/* Adjust footer-last for smaller screens */
 footer {
   text-align: center;
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  /* Adjust hero section for medium screens */
   label .toggle {
     position: absolute;
     top: 50px;
@@ -822,7 +813,6 @@ footer {
   #hero {
     padding-left: 30px;
     padding-bottom: 80px;
-    /* Adjust images section for medium screens */
   }
   #hero nav {
     flex-direction: row;
@@ -862,7 +852,6 @@ footer {
   #passion img {
     padding-top: 300px;
   }
-  /* Adjust services section for medium screens */
   #services {
     padding: 40px;
   }
@@ -880,7 +869,6 @@ footer {
   #services .big .card hr {
     width: 90px;
   }
-  /* Adjust subscribe section for medium screens */
   #subscribe {
     flex-direction: row;
     gap: 10px;
@@ -894,7 +882,6 @@ footer {
   #subscribe .part1 button {
     padding: 6px 42.97px;
   }
-  /* Adjust in-touch section for medium screens */
   #in-touch {
     flex-direction: row;
     gap: 0px;
@@ -909,7 +896,6 @@ footer {
   #in-touch .part2 {
     width: 100%;
   }
-  /* Adjust footer for medium screens */
   #contact {
     flex-direction: row;
     gap: 30px;
@@ -918,13 +904,11 @@ footer {
     flex-direction: row;
     gap: 15px;
   }
-  /* Adjust footer-last for medium screens */
   footer {
     text-align: center;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* Adjust hero section for large tablets and small laptops */
   label .toggle {
     display: none;
   }
@@ -1058,7 +1042,6 @@ footer {
     height: 100px;
     width: auto;
   }
-  /* Adjust collector section for desktops */
   .collector h1 {
     font-size: 44px;
   }
@@ -1115,7 +1098,6 @@ footer {
     width: 280px;
     height: 150px;
   }
-  /* Adjust subscribe section for desktops */
   #subscribe {
     flex-direction: row;
     gap: 30px;
@@ -1123,7 +1105,6 @@ footer {
   #subscribe .part1 {
     padding-top: 40px;
   }
-  /* Adjust in-touch section for desktops */
   #in-touch {
     flex-direction: row;
     gap: 30px;
@@ -1147,20 +1128,17 @@ footer {
     flex-direction: row;
     gap: 15px;
   }
-  /* Adjust footer-last for desktops */
   footer {
     text-align: center;
   }
 }
 @media (min-width: 1200px) {
-  /* Adjust hero section for large desktops */
   label .toggle {
     display: none;
   }
   #hero {
     padding-left: 60px;
     padding-bottom: 90px;
-    /* Adjust collector section for large desktops */
   }
   #hero nav {
     flex-direction: row;
@@ -1209,12 +1187,10 @@ footer {
     height: 200px;
     width: 280px;
   }
-  /* Adjust passion section for large desktops */
   #passion {
     flex-direction: row;
     padding: 40px;
   }
-  /* Adjust services section for large desktops */
   #services {
     padding: 40px;
   }
@@ -1229,7 +1205,6 @@ footer {
     width: 300px;
     height: 150px;
   }
-  /* Adjust subscribe section for large desktops */
   #subscribe {
     flex-direction: row;
     gap: 40px;
@@ -1237,7 +1212,6 @@ footer {
   #subscribe .part1 {
     padding-top: 50px;
   }
-  /* Adjust in-touch section for large desktops */
   #in-touch {
     flex-direction: row;
     gap: 100px;
@@ -1252,7 +1226,6 @@ footer {
   #in-touch .part2 {
     width: 100%;
   }
-  /* Adjust footer for large desktops */
   #contact {
     flex-direction: row;
     gap: 40px;
@@ -1261,7 +1234,6 @@ footer {
     flex-direction: row;
     gap: 20px;
   }
-  /* Adjust footer-last for large desktops */
   footer {
     text-align: center;
   }
