@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap");
 body {
   padding: 0;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Baloo 2", sans-serif;
   box-sizing: border-box;
   transition: transform 1s ease-in-out;
 }
@@ -598,6 +599,11 @@ input[type=checkbox]:checked ~ .toggle .bar3 {
 #contact .div .location p {
   padding-top: 55px;
 }
+#contact .div .location img {
+  height: 40px;
+  width: 40px;
+  padding-top: 50px;
+}
 #contact .div .location:hover {
   cursor: pointer;
   color: #7ad0f1;
@@ -614,6 +620,11 @@ input[type=checkbox]:checked ~ .toggle .bar3 {
 #contact .div .phone p {
   padding-top: 55px;
 }
+#contact .div .phone img {
+  height: 40px;
+  width: 40px;
+  padding-top: 50px;
+}
 #contact .div .phone:hover {
   color: #7ad0f1;
 }
@@ -623,6 +634,7 @@ input[type=checkbox]:checked ~ .toggle .bar3 {
 #contact .div img {
   width: 20px;
   height: auto;
+  padding-top: 50px;
 }
 
 footer {

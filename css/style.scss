@@ -1,1093 +1,1222 @@
-    body {
-        padding: 0;
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-        box-sizing: border-box;
-        transition: transform 1s ease-in-out;
-    }
-    
-    button {
-        cursor: pointer;
-    }
-    
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Baloo 2", sans-serif;
+    box-sizing: border-box;
+    transition: transform 1s ease-in-out;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    cursor: pointer;
+}
+
+.slide {
+    height: 100vh;
+    width: 280px;
+    position: fixed;
+    background-color: #cd7e50;
+    top: 0;
+    left: -400px;
+    transition: 0.8s ease;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.slide h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    padding: 20px 0;
+    margin: 0;
+    text-align: center;
+    padding-top: 50px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 10px 20px;
+    text-align: center;
+    display: flex;
+    gap: 15px;
     img {
-        cursor: pointer;
+        height: auto;
+        width: 35px;
     }
-    
-    .slide {
-        height: 100vh;
-        width: 280px;
-        position: fixed;
-        background-color: #cd7e50;
-        top: 0;
-        left: -400px;
-        transition: 0.8s ease;
-        z-index: 1000;
-        border-radius: 10px;
-    }
-    
-    .slide h1 {
+}
+
+ul li:hover {
+    background-color: #075979;
+    img {
+        transition: transform 1s ease-in-out;
+        transform: rotate(360deg);
         color: white;
-        font-weight: bold;
-        font-size: 40px;
-        padding: 20px 0;
-        margin: 0;
-        text-align: center;
-        padding-top: 50px;
     }
-    
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-    
-    ul li {
-        padding: 10px 20px;
-        text-align: center;
+}
+
+ul li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 10;
+    padding: 20px;
+}
+
+.bar1 {
+    top: 80px;
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ff9457;
+    margin-bottom: 5px;
+    transition: 0.3s;
+    position: fixed;
+    right: 30px;
+    transition: transform 0.7s ease-in-out;
+}
+
+.bar2 {
+    top: 90px;
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ff9457;
+    margin-bottom: 5px;
+    transition: 0.3s;
+    position: fixed;
+    right: 30px;
+    transition: transform 0.7s ease-in-out;
+}
+
+.bar3 {
+    top: 100px;
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ff9457;
+    margin-bottom: 5px;
+    transition: 0.3s;
+    position: fixed;
+    right: 30px;
+    transition: transform 0.7s ease-in-out;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked~.slide {
+    left: 0;
+}
+
+input[type="checkbox"]:checked~.toggle .bar1 {
+    transform: rotate(45deg) translateX(5px) translateY(12px);
+}
+
+input[type="checkbox"]:checked~.toggle .bar2 {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked~.toggle .bar3 {
+    transform: rotate(-45deg) translateY( -10px);
+}
+
+#hero {
+    padding-left: 60px;
+    padding-bottom: 100px;
+    overflow: hidden;
+    nav {
         display: flex;
-        gap: 15px;
+        gap: 450px;
         img {
-            height: auto;
-            width: 35px;
+            height: 150px;
+            width: auto;
+            transition: transform 0.8s ease-in-out;
         }
-    }
-    
-    ul li:hover {
-        background-color: #075979;
-        img {
-            transition: transform 1s ease-in-out;
-            transform: rotate(360deg);
-            color: white;
+        img:hover {
+            transform: scale(1.2);
         }
-    }
-    
-    ul li a {
-        color: white;
-        font-size: 20px;
-        text-decoration: none;
-    }
-    
-    .toggle {
-        position: fixed;
-        top: 20px;
-        right: 30px;
-        cursor: pointer;
-        z-index: 10;
-        padding: 20px;
-    }
-    
-    .bar1 {
-        top: 80px;
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: #ff9457;
-        margin-bottom: 5px;
-        transition: 0.3s;
-        position: fixed;
-        right: 30px;
-        transition: transform 0.7s ease-in-out;
-    }
-    
-    .bar2 {
-        top: 90px;
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: #ff9457;
-        margin-bottom: 5px;
-        transition: 0.3s;
-        position: fixed;
-        right: 30px;
-        transition: transform 0.7s ease-in-out;
-    }
-    
-    .bar3 {
-        top: 100px;
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: #ff9457;
-        margin-bottom: 5px;
-        transition: 0.3s;
-        position: fixed;
-        right: 30px;
-        transition: transform 0.7s ease-in-out;
-    }
-    
-    input[type="checkbox"] {
-        display: none;
-    }
-    
-    input[type="checkbox"]:checked~.slide {
-        left: 0;
-    }
-    
-    input[type="checkbox"]:checked~.toggle .bar1 {
-        transform: rotate(45deg) translateX(5px) translateY(12px);
-    }
-    
-    input[type="checkbox"]:checked~.toggle .bar2 {
-        opacity: 0;
-    }
-    
-    input[type="checkbox"]:checked~.toggle .bar3 {
-        transform: rotate(-45deg) translateY( -10px);
-    }
-    
-    #hero {
-        padding-left: 60px;
-        padding-bottom: 100px;
-        overflow: hidden;
-        nav {
+        .reference {
             display: flex;
-            gap: 450px;
-            img {
-                height: 150px;
-                width: auto;
-                transition: transform 0.8s ease-in-out;
-            }
-            img:hover {
-                transform: scale(1.2);
-            }
-            .reference {
-                display: flex;
-                gap: 60px;
-                padding-top: 20px;
-                a {
-                    color: #0a3140;
-                    text-decoration: none;
-                    font-size: 20px;
-                    font-weight: bolder;
-                    transition: all 0.3s ease-in-out;
-                }
-                a:hover {
-                    color: #cd7e50;
-                    text-decoration: none;
-                    font-size: 20px;
-                    font-weight: bolder;
-                    text-decoration: underline;
-                    text-underline-offset: 1rem;
-                    text-decoration-color: #cd7e50;
-                    transform: scale(1.1);
-                }
-            }
-        }
-        .collector {
-            display: block;
-            line-height: 1px;
-            text-align: left;
-            h1 {
+            gap: 60px;
+            padding-top: 20px;
+            a {
                 color: #0a3140;
-                margin-bottom: -8px;
-                font-size: 60px;
+                text-decoration: none;
+                font-size: 20px;
                 font-weight: bolder;
-                transition: transform 0.8s ease-in-out;
-            }
-            h1:hover {
-                color: #cd7e50;
-                transform: scale(1.01);
-                cursor: pointer;
-            }
-            h6 {
-                color: #0a3140;
-                margin-bottom: -8px;
-                font-size: 40px;
-                font-weight: bolder;
-                span {
-                    font-size: 50px;
-                    color: #cd7e50;
-                    transition: all 0.3s ease-in-out;
-                }
-            }
-            h6:hover {
-                cursor: pointer;
-                span {
-                    transform: scale(1.3);
-                    color: #2c7e9e;
-                }
-            }
-            .collabo {
-                display: flex;
-                margin-top: 30px;
-                gap: 10px;
-                position: relative;
-                hr {
-                    position: absolute;
-                    margin: 0;
-                    top: 18px;
-                    justify-content: flex-start;
-                    align-items: start;
-                    width: 60px;
-                    height: 4px;
-                    border-radius: 30px;
-                    border: none;
-                    background-color: #cd7e50;
-                }
-                p {
-                    right: 35px;
-                    padding-left: 80px;
-                    font-weight: bold;
-                    font-size: 18px;
-                    color: #0a3140;
-                }
-            }
-        }
-        .images {
-            padding-top: 60px;
-            padding-bottom: 110px;
-            display: flex;
-            gap: 15px;
-            overflow: hidden;
-            transition: transform 1s ease-in-out;
-            .short {
-                display: block;
-                transition: transform 1s ease-in-out;
-                .sh2 {
-                    padding-top: 15px;
-                    transition: transform 1s ease-in-out;
-                }
-                img {
-                    -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
-                    height: 150px;
-                    width: 180px;
-                    transition: transform 1s ease-in-out;
-                }
-                img:hover {
-                    transform: scale(1.1)
-                }
-            }
-            .big {
-                transition: transform 2s ease-in-out;
-                img {
-                    -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
-                    height: 315px;
-                    width: 218px;
-                    transition: transform 2s ease-in-out;
-                }
-                img:hover {
-                    transform: scale(1.1)
-                }
-            }
-            .regular {
-                padding-top: 115px;
-                display: block;
-                transition: transform 2s ease-in-out;
-                img {
-                    -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
-                    height: 200px;
-                    width: 180px;
-                    transition: transform 1s ease-in-out;
-                }
-                img:hover {
-                    transform: scale(1.1)
-                }
-            }
-        }
-    }
-    
-    #passion {
-        display: flex;
-        padding: 60px;
-        padding-bottom: 150px;
-        margin-top: 10px;
-        overflow: hidden;
-        .text {
-            width: 100%;
-            padding-top: 100px;
-            h1 {
-                font-weight: bold;
-                color: #cd7e50;
-                transition: transform 1s ease-in-out
-            }
-            h1:hover {
-                color: #2c7e9e;
-                transform: scale(1.05);
-                cursor: pointer;
-            }
-            p {
-                color: #355561;
-                font-weight: 500;
-            }
-        }
-        .img {
-            width: 100%;
-            perspective: 1000px;
-            img {
-                width: 100%;
-                transition: transform 2s ease-in-out;
-            }
-            img:hover {
-                transform: rotate(180deg);
-            }
-        }
-    }
-    
-    #services {
-        background-color: #0b394d;
-        padding: 60px;
-        overflow: hidden;
-        h2 {
-            font-size: 40px;
-            font-weight: bold;
-            color: white;
-        }
-        .carousel {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            // overflow-x: scroll;
-        }
-        .wrapper {
-            display: flex;
-            gap: 15px;
-            transition: transform 0.5s ease-in-out;
-            scroll-snap-type: x mandatory;
-        }
-        .card {
-            scroll-snap-align: start;
-            padding: 10px;
-            text-align: left;
-            background-color: #0a4258;
-            display: block;
-            border: none;
-            border-radius: 20px;
-            gap: 01px;
-            box-shadow: 0 0 10px;
-            transition: all 0.5s ease-in-out;
-            h1 {
-                transition: all 0.5s ease-in-out;
-            }
-            hr {
-                background-color: #ff9457;
-                border: none;
-                width: 300px;
-                height: 5px;
-                border-radius: 20px;
                 transition: all 0.3s ease-in-out;
             }
-            hr:hover {
-                background-color: #0a3140;
-            }
-            .img {
-                transition: transform 0.8s ease-in-out;
-                overflow: hidden;
-                position: relative;
-                img {
-                    transform: scale(1);
-                    transition: transform 5s;
-                    ;
-                }
+            a:hover {
+                color: #cd7e50;
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: bolder;
+                text-decoration: underline;
+                text-underline-offset: 1rem;
+                text-decoration-color: #cd7e50;
+                transform: scale(1.1);
             }
         }
-        .card:hover {
-            background-color: #2c7e9e;
+    }
+    .collector {
+        display: block;
+        line-height: 1px;
+        text-align: left;
+        h1 {
+            color: #0a3140;
+            margin-bottom: -8px;
+            font-size: 60px;
+            font-weight: bolder;
+            transition: transform 0.8s ease-in-out;
+        }
+        h1:hover {
+            color: #cd7e50;
+            transform: scale(1.01);
             cursor: pointer;
-            transform: scale(1.05);
-            img {
-                transform: scale(1.005);
-            }
-            h1 {
-                color: #71a8be;
-            }
-            hr {
-                background-color: #fff;
-                border: none;
-            }
-            .img {
-                transform: scale(1.03);
+        }
+        h6 {
+            color: #0a3140;
+            margin-bottom: -8px;
+            font-size: 40px;
+            font-weight: bolder;
+            span {
+                font-size: 50px;
+                color: #cd7e50;
+                transition: all 0.3s ease-in-out;
             }
         }
+        h6:hover {
+            cursor: pointer;
+            span {
+                transform: scale(1.3);
+                color: #2c7e9e;
+            }
+        }
+        .collabo {
+            display: flex;
+            margin-top: 30px;
+            gap: 10px;
+            position: relative;
+            hr {
+                position: absolute;
+                margin: 0;
+                top: 18px;
+                justify-content: flex-start;
+                align-items: start;
+                width: 60px;
+                height: 4px;
+                border-radius: 30px;
+                border: none;
+                background-color: #cd7e50;
+            }
+            p {
+                right: 35px;
+                padding-left: 80px;
+                font-weight: bold;
+                font-size: 18px;
+                color: #0a3140;
+            }
+        }
+    }
+    .images {
+        padding-top: 60px;
+        padding-bottom: 110px;
+        display: flex;
+        gap: 15px;
+        overflow: hidden;
+        transition: transform 1s ease-in-out;
+        .short {
+            display: block;
+            transition: transform 1s ease-in-out;
+            .sh2 {
+                padding-top: 15px;
+                transition: transform 1s ease-in-out;
+            }
+            img {
+                -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
+                height: 150px;
+                width: 180px;
+                transition: transform 1s ease-in-out;
+            }
+            img:hover {
+                transform: scale(1.1)
+            }
+        }
+        .big {
+            transition: transform 2s ease-in-out;
+            img {
+                -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
+                height: 315px;
+                width: 218px;
+                transition: transform 2s ease-in-out;
+            }
+            img:hover {
+                transform: scale(1.1)
+            }
+        }
+        .regular {
+            padding-top: 115px;
+            display: block;
+            transition: transform 2s ease-in-out;
+            img {
+                -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
+                height: 200px;
+                width: 180px;
+                transition: transform 1s ease-in-out;
+            }
+            img:hover {
+                transform: scale(1.1)
+            }
+        }
+    }
+}
+
+#passion {
+    display: flex;
+    padding: 60px;
+    padding-bottom: 150px;
+    margin-top: 10px;
+    overflow: hidden;
+    .text {
+        width: 100%;
+        padding-top: 100px;
+        h1 {
+            font-weight: bold;
+            color: #cd7e50;
+            transition: transform 1s ease-in-out
+        }
+        h1:hover {
+            color: #2c7e9e;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        p {
+            color: #355561;
+            font-weight: 500;
+        }
+    }
+    .img {
+        width: 100%;
+        perspective: 1000px;
+        img {
+            width: 100%;
+            transition: transform 2s ease-in-out;
+        }
+        img:hover {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+#services {
+    background-color: #0b394d;
+    padding: 60px;
+    overflow: hidden;
+    h2 {
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+    }
+    .carousel {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        // overflow-x: scroll;
+    }
+    .wrapper {
+        display: flex;
+        gap: 15px;
+        transition: transform 0.5s ease-in-out;
+        scroll-snap-type: x mandatory;
+    }
+    .card {
+        scroll-snap-align: start;
+        padding: 10px;
+        text-align: left;
+        background-color: #0a4258;
+        display: block;
+        border: none;
+        border-radius: 20px;
+        gap: 01px;
+        box-shadow: 0 0 10px;
+        transition: all 0.5s ease-in-out;
+        h1 {
+            transition: all 0.5s ease-in-out;
+        }
+        hr {
+            background-color: #ff9457;
+            border: none;
+            width: 300px;
+            height: 5px;
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+        hr:hover {
+            background-color: #0a3140;
+        }
+        .img {
+            transition: transform 0.8s ease-in-out;
+            overflow: hidden;
+            position: relative;
+            img {
+                transform: scale(1);
+                transition: transform 5s;
+                ;
+            }
+        }
+    }
+    .card:hover {
+        background-color: #2c7e9e;
+        cursor: pointer;
+        transform: scale(1.05);
+        img {
+            transform: scale(1.005);
+        }
+        h1 {
+            color: #71a8be;
+        }
+        hr {
+            background-color: #fff;
+            border: none;
+        }
+        .img {
+            transform: scale(1.03);
+        }
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    .card h1 {
+        color: #cd7e50;
+    }
+    .card p {
+        color: white;
+    }
+    /* Navigation buttons and circles */
+    .carousel-nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        width: 100%;
+        padding: 0 20px;
+    }
+    .prev-button,
+    .next-button {
+        background-color: #075979;
+        color: #ffffff;
+        border: none;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .prev-button:hover,
+    .next-button:hover {
+        background-color: #2c7e9e;
+    }
+    #carousel-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .nav-circle {
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        border-radius: 50%;
+        margin: 0 5px;
+        transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
+    }
+    .active {
+        width: 20px;
+        border-radius: 30px;
+    }
+    @media (max-width: 768px) {
         .card img {
             width: 100%;
             height: auto;
-            border-radius: 10px;
-        }
-        .card h1 {
-            color: #cd7e50;
-        }
-        .card p {
-            color: white;
-        }
-        /* Navigation buttons and circles */
-        .carousel-nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-            width: 100%;
-            padding: 0 20px;
-        }
-        .prev-button,
-        .next-button {
-            background-color: #075979;
-            color: #ffffff;
-            border: none;
-            font-weight: bold;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .prev-button:hover,
-        .next-button:hover {
-            background-color: #2c7e9e;
-        }
-        #carousel-nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .nav-circle {
-            width: 10px;
-            height: 10px;
-            background-color: white;
-            border-radius: 50%;
-            margin: 0 5px;
-            transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
-        }
-        .active {
-            width: 20px;
-            border-radius: 30px;
-        }
-        @media (max-width: 768px) {
-            .card img {
-                width: 100%;
-                height: auto;
-            }
         }
     }
-    
-    #subscribe {
-        padding: 60px;
-        display: flex;
-        gap: 80px;
-        overflow: hidden;
-        .part1 {
-            padding-top: 150px;
+}
+
+#subscribe {
+    padding: 60px;
+    display: flex;
+    gap: 80px;
+    overflow: hidden;
+    .part1 {
+        padding-top: 150px;
+        width: 100%;
+        h1 {
+            color: #cd7e50;
+            font-weight: bold;
+            font-size: 32px;
+            padding-bottom: 40px;
+            transition: transform 0.9s ease-in-out;
+        }
+        h1:hover {
+            color: #2c7e9e;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        button {
+            color: white;
+            font-weight: 500;
+            background-color: #0b394d;
+            border: none;
+            padding: 15px 90px;
+            text-transform: capitalize;
+            transition: transform 0.5s ease-in-out;
+        }
+        button:hover {
+            background-color: #2c7e9e;
+            transform: scale(1.1);
+        }
+    }
+    .part2 {
+        width: 100%;
+        img {
             width: 100%;
-            h1 {
-                color: #cd7e50;
-                font-weight: bold;
-                font-size: 32px;
-                padding-bottom: 40px;
-                transition: transform 0.9s ease-in-out;
+            height: auto;
+            transition: transform 1s ease-in-out;
+            border-radius: 10px;
+        }
+        img:hover {
+            transform: rotate(-360deg);
+        }
+    }
+}
+
+#in-touch {
+    display: flex;
+    padding: 60px;
+    gap: 350px;
+    background-color: #f0f1f3;
+    .part1 {
+        img {
+            height: 500px;
+            width: auto;
+        }
+    }
+    .part2 {
+        width: 100%;
+        h3 {
+            text-transform: capitalize;
+            color: #cd7e50;
+            font-size: 35px;
+            font-weight: bold;
+            transition: transform 1s ease-in-out;
+        }
+        h3:hover {
+            color: #2c7e9e;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        p {
+            font-weight: bold;
+            color: #0b394d;
+        }
+        .inputs {
+            display: block;
+            input {
+                margin-top: 10px;
+                display: block;
+                border: none;
+                border-radius: 6px;
+                padding: 10px 193px 10px 10px;
+                color: #0b394d;
+                font-size: 14px;
             }
-            h1:hover {
-                color: #2c7e9e;
-                transform: scale(1.05);
-                cursor: pointer;
+            input:focus {
+                border-color: #cd7e50;
+                box-shadow: 0 0 10px #ff9457;
+            }
+            input::placeholder {
+                text-align: left;
+                font-weight: 700;
+            }
+            .message {
+                padding: 10px 193px 50px 10px;
             }
             button {
-                color: white;
-                font-weight: 500;
-                background-color: #0b394d;
+                margin-top: 10px;
+                background-color: #0a3140;
                 border: none;
-                padding: 15px 90px;
-                text-transform: capitalize;
+                border-radius: 6px;
+                color: white;
+                padding: 10px 163px;
                 transition: transform 0.5s ease-in-out;
             }
             button:hover {
                 background-color: #2c7e9e;
                 transform: scale(1.1);
-            }
-        }
-        .part2 {
-            width: 100%;
-            img {
-                width: 100%;
-                height: auto;
-                transition: transform 1s ease-in-out;
-                border-radius: 10px;
-            }
-            img:hover {
-                transform: rotate(-360deg);
+                cursor: pointer;
             }
         }
     }
-    
-    #in-touch {
+}
+
+#contact {
+    color: white;
+    background-image: url(../image/contact.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: none;
+    padding: 60px;
+    display: flex;
+    .div {
         display: flex;
-        padding: 60px;
-        gap: 350px;
-        background-color: #f0f1f3;
-        .part1 {
+        gap: 150px;
+        .location {
+            display: flex;
+            gap: 20px;
+            transition: transform 1s ease-in-out;
+            p {
+                padding-top: 55px;
+            }
             img {
-                height: 500px;
+                height: 40px;
+                width: 40px;
+                padding-top: 50px;
+            }
+        }
+        .location:hover {
+            cursor: pointer;
+            color: #7ad0f1;
+            img {
+                transform: scale(1.5);
+            }
+        }
+        .phone {
+            display: flex;
+            gap: 20px;
+            cursor: pointer;
+            transition: transform 1s ease-in-out;
+            p {
+                padding-top: 55px;
+            }
+            img {
+                height: 40px;
+                width: 40px;
+                padding-top: 50px;
+            }
+        }
+        .phone:hover {
+            color: #7ad0f1;
+            img {
+                transform: scale(1.5);
+            }
+        }
+        img {
+            width: 20px;
+            height: auto;
+            padding-top: 50px;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    img {
+        transition: transform 2s ease-in-out;
+    }
+    img:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transform: rotate(-720deg);
+    }
+    p {
+        color: #0a3140;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 399px) {
+    #hero {
+        padding-left: 15px;
+        padding-bottom: 40px;
+        nav {
+            flex-direction: column;
+            gap: 6px;
+            align-items: center;
+            .reference {
+                display: none;
+            }
+            .logo {
+                padding-top: 20px;
+                height: 90px;
                 width: auto;
             }
         }
-        .part2 {
-            width: 100%;
-            h3 {
-                text-transform: capitalize;
-                color: #cd7e50;
-                font-size: 35px;
-                font-weight: bold;
-                transition: transform 1s ease-in-out;
+        .collector {
+            text-align: center;
+            h1 {
+                font-size: 40px;
+                line-height: 40px;
             }
-            h3:hover {
-                color: #2c7e9e;
-                transform: scale(1.05);
-                cursor: pointer;
-            }
-            p {
-                font-weight: bold;
-                color: #0b394d;
-            }
-            .inputs {
-                display: block;
-                input {
-                    margin-top: 10px;
-                    display: block;
-                    border: none;
-                    border-radius: 6px;
-                    padding: 10px 193px 10px 10px;
-                    color: #0b394d;
-                    font-size: 14px;
-                }
-                input:focus {
-                    border-color: #cd7e50;
-                    box-shadow: 0 0 10px #ff9457;
-                }
-                input::placeholder {
-                    text-align: left;
-                    font-weight: 700;
-                }
-                .message {
-                    padding: 10px 193px 50px 10px;
-                }
-                button {
-                    margin-top: 10px;
-                    background-color: #0a3140;
-                    border: none;
-                    border-radius: 6px;
-                    color: white;
-                    padding: 10px 163px;
-                    transition: transform 0.5s ease-in-out;
-                }
-                button:hover {
-                    background-color: #2c7e9e;
-                    transform: scale(1.1);
-                    cursor: pointer;
+            h6 {
+                font-size: 20px;
+                span {
+                    font-size: 25px;
                 }
             }
-        }
-    }
-    
-    #contact {
-        color: white;
-        background-image: url(../image/contact.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-repeat: none;
-        padding: 60px;
-        display: flex;
-        .div {
-            display: flex;
-            gap: 150px;
-            .location {
-                display: flex;
-                gap: 20px;
-                transition: transform 1s ease-in-out;
+            .collabo {
                 p {
-                    padding-top: 55px;
-                }
-            }
-            .location:hover {
-                cursor: pointer;
-                color: #7ad0f1;
-                img {
-                    transform: scale(1.5);
-                }
-            }
-            .phone {
-                display: flex;
-                gap: 20px;
-                cursor: pointer;
-                transition: transform 1s ease-in-out;
-                p {
-                    padding-top: 55px;
-                }
-            }
-            .phone:hover {
-                color: #7ad0f1;
-                img {
-                    transform: scale(1.5);
-                }
-            }
-            img {
-                width: 20px;
-                height: auto;
-            }
-        }
-    }
-    
-    footer {
-        text-align: center;
-        img {
-            transition: transform 2s ease-in-out;
-        }
-        img:hover {
-            cursor: pointer;
-            transform: scale(1.1);
-            transform: rotate(-720deg);
-        }
-        p {
-            color: #0a3140;
-            font-weight: 500;
-        }
-    }
-    
-    @media (max-width: 399px) {
-        #hero {
-            padding-left: 15px;
-            padding-bottom: 40px;
-            nav {
-                flex-direction: column;
-                gap: 6px;
-                align-items: center;
-                .reference {
-                    display: none;
-                }
-                .logo {
-                    padding-top: 20px;
-                    height: 90px;
-                    width: auto;
-                }
-            }
-            .collector {
-                text-align: center;
-                h1 {
-                    font-size: 40px;
-                    line-height: 40px;
-                }
-                h6 {
-                    font-size: 20px;
-                    span {
-                        font-size: 25px;
-                    }
-                }
-                .collabo {
-                    p {
-                        font-size: 13px;
-                    }
-                }
-            }
-            .images {
-                flex-direction: row;
-                gap: 10px;
-                overflow: hidden;
-            }
-        }
-        #passion {
-            flex-direction: column;
-            padding: 30px;
-        }
-        #services {
-            padding: 25px;
-            h2 {
-                font-size: 18px;
-            }
-            .big {
-                flex-direction: column;
-                gap: 18px;
-                .card {
-                    img {
-                        width: 390px;
-                        height: 190px;
-                    }
-                }
-            }
-        }
-        #in-touch {
-            .part2 {
-                .inputs {
-                    input {
-                        padding: 10px 20px 10px 10px;
-                    }
-                    .message {
-                        padding: 10px 20px 50px 10px;
-                    }
-                    button {
-                        padding: 10px 79px;
-                    }
-                }
-            }
-        }
-    }
-    
-    @media (min-width: 400px) and (max-width: 575px) {
-        label {
-            .toggle {
-                position: absolute;
-                top: 50px;
-            }
-        }
-        #hero {
-            padding-left: 20px;
-            padding-bottom: 50px;
-            nav {
-                flex-direction: column;
-                gap: 09px;
-                align-items: center;
-                .reference {
-                    display: none;
-                }
-                .logo {
-                    padding-top: 20px;
-                    height: 100px;
-                    width: auto;
-                }
-            }
-            .collector {
-                text-align: center;
-                padding-top: 60px;
-                h1 {
-                    font-size: 50px;
-                    line-height: 50px;
-                }
-                h6 {
-                    font-size: 30px;
-                    span {
-                        font-size: 35px;
-                    }
+                    font-size: 13px;
                 }
             }
         }
         .images {
             flex-direction: row;
             gap: 10px;
+            overflow: hidden;
         }
     }
-    
     #passion {
         flex-direction: column;
         padding: 30px;
     }
-    
     #services {
-        padding: 30px;
+        padding: 25px;
         h2 {
-            font-size: 14px;
+            font-size: 18px;
         }
         .big {
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
             .card {
                 img {
-                    width: 400px;
-                    height: 200px;
+                    width: 390px;
+                    height: 190px;
                 }
             }
         }
     }
-    
-    #subscribe {
-        flex-direction: column;
-        gap: 20px;
-        .part1 {
-            padding-top: 50px;
-        }
-    }
-    
     #in-touch {
-        flex-direction: column;
-        gap: 20px;
-        .part1 {
-            img {
-                height: 250px;
-                width: auto;
-            }
-        }
         .part2 {
-            width: 100%;
-        }
-    }
-    
-    #contact {
-        flex-direction: column;
-        gap: 20px;
-        background-position: right;
-        background-repeat: none;
-        background-size: auto;
-        .div {
-            flex-direction: column;
-            gap: 10px;
-        }
-    }
-    
-    footer {
-        text-align: center;
-    }
-    
-    @media (min-width: 576px) and (max-width: 767px) {
-        label {
-            .toggle {
-                position: absolute;
-                top: 50px;
-            }
-        }
-        #hero {
-            padding-left: 30px;
-            padding-bottom: 80px;
-            nav {
-                flex-direction: row;
-                gap: 15px;
-                align-items: center;
-                .reference {
-                    display: none;
+            .inputs {
+                input {
+                    padding: 10px 20px 10px 10px;
                 }
-                .logo {
-                    padding-top: 30px;
-                    height: 115px;
-                    width: auto;
-                }
-            }
-            .collector {
-                text-align: center;
-                padding-top: 60px;
-                h1 {
-                    font-size: 60px;
-                    line-height: 60px;
-                }
-                h6 {
-                    font-size: 40px;
-                    span {
-                        font-size: 44px;
-                    }
-                }
-            }
-            .images {
-                flex-direction: row;
-                gap: 15px;
-            }
-        }
-        #passion {
-            flex-direction: row;
-            padding: 40px;
-            img {
-                padding-top: 300px;
-            }
-        }
-        #services {
-            padding: 40px;
-            h2 {
-                font-size: 32px;
-            }
-            .big {
-                flex-direction: row;
-                gap: 30px;
-                .card {
-                    img {
-                        width: 100px;
-                        height: 60px;
-                    }
-                    hr {
-                        width: 90px;
-                    }
-                }
-            }
-        }
-        #subscribe {
-            flex-direction: row;
-            gap: 10px;
-            .part1 {
-                padding-top: 20px;
-                h1 {
-                    font-size: 26px;
+                .message {
+                    padding: 10px 20px 50px 10px;
                 }
                 button {
-                    padding: 6px 42.97px;
+                    padding: 10px 79px;
                 }
             }
-        }
-        #in-touch {
-            flex-direction: row;
-            gap: 0px;
-            .part1 {
-                width: 20%;
-                img {
-                    height: 100%;
-                    width: auto;
-                }
-            }
-            .part2 {
-                width: 100%;
-            }
-        }
-        #contact {
-            flex-direction: row;
-            gap: 30px;
-            .div {
-                flex-direction: row;
-                gap: 15px;
-            }
-        }
-        footer {
-            text-align: center;
         }
     }
-    
-    @media (min-width: 768px) and (max-width: 991px) {
-        label {
-            .toggle {
-                display: none;
-            }
-        }
-        #hero {
-            padding-left: 40px;
-            padding-bottom: 70px;
-            nav {
-                flex-direction: row;
-                gap: 300px;
-                .reference {
-                    padding-top: 32.5px;
-                    flex-direction: row;
-                    gap: 20px;
-                    a {
-                        font-size: 17px;
-                    }
-                }
-                .logo {
-                    height: 80px;
-                    width: auto;
-                }
-            }
-            .collector {
-                h1 {
-                    font-size: 36px;
-                }
-                h6 {
-                    font-size: 30px;
-                    span {
-                        font-size: 34px;
-                    }
-                }
-            }
-            .images {
-                flex-direction: row;
-                display: flex;
-                gap: 18px;
-                .short {
-                    display: block;
-                    .sh2 {
-                        padding-top: 15px;
-                    }
-                    img {
-                        height: 120px;
-                        width: 150px;
-                    }
-                }
-                .big {
-                    img {
-                        height: 300px;
-                        width: 210px;
-                    }
-                }
-                .regular {
-                    padding-top: 115px;
-                    display: block;
-                    img {
-                        height: 190px;
-                        width: 150px;
-                    }
-                }
-            }
-        }
-        #passion {
-            flex-direction: row;
-            padding: 30px;
-        }
-        #services {
-            padding: 30px;
-            h2 {
-                font-size: 28px;
-            }
-            .big {
-                flex-direction: row;
-                gap: 20px;
-                .card {
-                    img {
-                        width: 100%;
-                    }
-                }
-            }
-        }
-        #subscribe {
-            flex-direction: row;
-            gap: 20px;
-            .part1 {
-                padding-top: 40px;
-                h1 {
-                    font-size: 20px;
-                }
-            }
-        }
-        #in-touch {
-            flex-direction: row;
-            padding: -60px;
-            gap: 0px;
-            .part1 {
-                width: 50%;
-                img {
-                    height: 80%;
-                    width: auto;
-                }
-            }
-            .part2 {
-                width: 100%;
-            }
-        }
-        #contact {
-            flex-direction: row;
-            gap: 20px;
-            .div {
-                flex-direction: row;
-                gap: 10px;
-            }
-        }
-        footer {
-            text-align: center;
+}
+
+@media (min-width: 400px) and (max-width: 575px) {
+    label {
+        .toggle {
+            position: absolute;
+            top: 50px;
         }
     }
-    
-    @media (min-width: 992px) and (max-width: 1199px) {
-        label {
-            .toggle {
-                display: none;
-            }
-        }
-        #hero {
-            padding-left: 50px;
-            padding-bottom: 80px;
-            nav {
-                flex-direction: row;
-                gap: 300px;
-            }
+    #hero {
+        padding-left: 20px;
+        padding-bottom: 50px;
+        nav {
+            flex-direction: column;
+            gap: 09px;
+            align-items: center;
             .reference {
-                flex-direction: row;
-                gap: 10px;
+                display: none;
             }
             .logo {
+                padding-top: 20px;
                 height: 100px;
                 width: auto;
             }
         }
         .collector {
+            text-align: center;
+            padding-top: 60px;
             h1 {
-                font-size: 44px;
+                font-size: 50px;
+                line-height: 50px;
             }
             h6 {
-                font-size: 28px;
+                font-size: 30px;
+                span {
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+    .images {
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+
+#passion {
+    flex-direction: column;
+    padding: 30px;
+}
+
+#services {
+    padding: 30px;
+    h2 {
+        font-size: 14px;
+    }
+    .big {
+        flex-direction: column;
+        gap: 20px;
+        .card {
+            img {
+                width: 400px;
+                height: 200px;
+            }
+        }
+    }
+}
+
+#subscribe {
+    flex-direction: column;
+    gap: 20px;
+    .part1 {
+        padding-top: 50px;
+    }
+}
+
+#in-touch {
+    flex-direction: column;
+    gap: 20px;
+    .part1 {
+        img {
+            height: 250px;
+            width: auto;
+        }
+    }
+    .part2 {
+        width: 100%;
+    }
+}
+
+#contact {
+    flex-direction: column;
+    gap: 20px;
+    background-position: right;
+    background-repeat: none;
+    background-size: auto;
+    .div {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+footer {
+    text-align: center;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    label {
+        .toggle {
+            position: absolute;
+            top: 50px;
+        }
+    }
+    #hero {
+        padding-left: 30px;
+        padding-bottom: 80px;
+        nav {
+            flex-direction: row;
+            gap: 15px;
+            align-items: center;
+            .reference {
+                display: none;
+            }
+            .logo {
+                padding-top: 30px;
+                height: 115px;
+                width: auto;
+            }
+        }
+        .collector {
+            text-align: center;
+            padding-top: 60px;
+            h1 {
+                font-size: 60px;
+                line-height: 60px;
+            }
+            h6 {
+                font-size: 40px;
+                span {
+                    font-size: 44px;
+                }
+            }
+        }
+        .images {
+            flex-direction: row;
+            gap: 15px;
+        }
+    }
+    #passion {
+        flex-direction: row;
+        padding: 40px;
+        img {
+            padding-top: 300px;
+        }
+    }
+    #services {
+        padding: 40px;
+        h2 {
+            font-size: 32px;
+        }
+        .big {
+            flex-direction: row;
+            gap: 30px;
+            .card {
+                img {
+                    width: 100px;
+                    height: 60px;
+                }
+                hr {
+                    width: 90px;
+                }
+            }
+        }
+    }
+    #subscribe {
+        flex-direction: row;
+        gap: 10px;
+        .part1 {
+            padding-top: 20px;
+            h1 {
+                font-size: 26px;
+            }
+            button {
+                padding: 6px 42.97px;
+            }
+        }
+    }
+    #in-touch {
+        flex-direction: row;
+        gap: 0px;
+        .part1 {
+            width: 20%;
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+        .part2 {
+            width: 100%;
+        }
+    }
+    #contact {
+        flex-direction: row;
+        gap: 30px;
+        .div {
+            flex-direction: row;
+            gap: 15px;
+        }
+    }
+    footer {
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    label {
+        .toggle {
+            display: none;
+        }
+    }
+    #hero {
+        padding-left: 40px;
+        padding-bottom: 70px;
+        nav {
+            flex-direction: row;
+            gap: 300px;
+            .reference {
+                padding-top: 32.5px;
+                flex-direction: row;
+                gap: 20px;
+                a {
+                    font-size: 17px;
+                }
+            }
+            .logo {
+                height: 80px;
+                width: auto;
+            }
+        }
+        .collector {
+            h1 {
+                font-size: 36px;
+            }
+            h6 {
+                font-size: 30px;
+                span {
+                    font-size: 34px;
+                }
             }
         }
         .images {
             flex-direction: row;
             display: flex;
+            gap: 18px;
+            .short {
+                display: block;
+                .sh2 {
+                    padding-top: 15px;
+                }
+                img {
+                    height: 120px;
+                    width: 150px;
+                }
+            }
+            .big {
+                img {
+                    height: 300px;
+                    width: 210px;
+                }
+            }
+            .regular {
+                padding-top: 115px;
+                display: block;
+                img {
+                    height: 190px;
+                    width: 150px;
+                }
+            }
+        }
+    }
+    #passion {
+        flex-direction: row;
+        padding: 30px;
+    }
+    #services {
+        padding: 30px;
+        h2 {
+            font-size: 28px;
+        }
+        .big {
+            flex-direction: row;
+            gap: 20px;
+            .card {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    #subscribe {
+        flex-direction: row;
+        gap: 20px;
+        .part1 {
+            padding-top: 40px;
+            h1 {
+                font-size: 20px;
+            }
+        }
+    }
+    #in-touch {
+        flex-direction: row;
+        padding: -60px;
+        gap: 0px;
+        .part1 {
+            width: 50%;
+            img {
+                height: 80%;
+                width: auto;
+            }
+        }
+        .part2 {
+            width: 100%;
+        }
+    }
+    #contact {
+        flex-direction: row;
+        gap: 20px;
+        .div {
+            flex-direction: row;
+            gap: 10px;
+        }
+    }
+    footer {
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    label {
+        .toggle {
+            display: none;
+        }
+    }
+    #hero {
+        padding-left: 50px;
+        padding-bottom: 80px;
+        nav {
+            flex-direction: row;
+            gap: 300px;
+        }
+        .reference {
+            flex-direction: row;
+            gap: 10px;
+        }
+        .logo {
+            height: 100px;
+            width: auto;
+        }
+    }
+    .collector {
+        h1 {
+            font-size: 44px;
+        }
+        h6 {
+            font-size: 28px;
+        }
+    }
+    .images {
+        flex-direction: row;
+        display: flex;
+        gap: 15px;
+        .short {
+            display: block;
+            .sh2 {
+                padding-top: 15px;
+            }
+            img {
+                -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
+                height: 150px;
+                width: 290px;
+            }
+        }
+        .big {
+            img {
+                -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
+                height: 315px;
+                width: 290px;
+            }
+        }
+        .regular {
+            padding-top: 115px;
+            display: block;
+            img {
+                -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
+                height: 200px;
+                width: 290px;
+            }
+        }
+    }
+    /* Adjust passion section for desktops */
+    #passion {
+        flex-direction: row;
+        padding: 30px;
+    }
+    /* Adjust services section for desktops */
+    #services {
+        padding: 30px;
+        h2 {
+            font-size: 32px;
+        }
+        .big {
+            flex-direction: row;
+            gap: 30px;
+            .card {
+                img {
+                    width: 280px;
+                    height: 150px;
+                }
+            }
+        }
+    }
+    #subscribe {
+        flex-direction: row;
+        gap: 30px;
+        .part1 {
+            padding-top: 40px;
+        }
+    }
+    #in-touch {
+        flex-direction: row;
+        gap: 30px;
+        .part1 {
+            width: 100%;
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+        .part2 {
+            width: 100%;
+        }
+    }
+    /* Adjust footer for desktops */
+    #contact {
+        flex-direction: row;
+        gap: 30px;
+        .div {
+            flex-direction: row;
             gap: 15px;
+        }
+    }
+    footer {
+        text-align: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    label {
+        .toggle {
+            display: none;
+        }
+    }
+    #hero {
+        padding-left: 60px;
+        padding-bottom: 90px;
+        nav {
+            flex-direction: row;
+            gap: 450px;
+        }
+        .reference {
+            flex-direction: row;
+            gap: 10px;
+        }
+        .logo {
+            height: 110px;
+            width: auto;
+        }
+        .collector {
+            h1 {
+                font-size: 52px;
+            }
+            h6 {
+                font-size: 32px;
+            }
+        }
+        .images {
+            flex-direction: row;
+            gap: 20px;
             .short {
                 display: block;
                 .sh2 {
@@ -1096,14 +1225,14 @@
                 img {
                     -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
                     height: 150px;
-                    width: 290px;
+                    width: 280px;
                 }
             }
             .big {
                 img {
                     -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
                     height: 315px;
-                    width: 290px;
+                    width: 280px;
                 }
             }
             .regular {
@@ -1112,178 +1241,61 @@
                 img {
                     -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
                     height: 200px;
-                    width: 290px;
+                    width: 280px;
                 }
             }
-        }
-        /* Adjust passion section for desktops */
-        #passion {
-            flex-direction: row;
-            padding: 30px;
-        }
-        /* Adjust services section for desktops */
-        #services {
-            padding: 30px;
-            h2 {
-                font-size: 32px;
-            }
-            .big {
-                flex-direction: row;
-                gap: 30px;
-                .card {
-                    img {
-                        width: 280px;
-                        height: 150px;
-                    }
-                }
-            }
-        }
-        #subscribe {
-            flex-direction: row;
-            gap: 30px;
-            .part1 {
-                padding-top: 40px;
-            }
-        }
-        #in-touch {
-            flex-direction: row;
-            gap: 30px;
-            .part1 {
-                width: 100%;
-                img {
-                    height: 100%;
-                    width: auto;
-                }
-            }
-            .part2 {
-                width: 100%;
-            }
-        }
-        /* Adjust footer for desktops */
-        #contact {
-            flex-direction: row;
-            gap: 30px;
-            .div {
-                flex-direction: row;
-                gap: 15px;
-            }
-        }
-        footer {
-            text-align: center;
         }
     }
-    
-    @media (min-width: 1200px) {
-        label {
-            .toggle {
-                display: none;
+    #passion {
+        flex-direction: row;
+        padding: 40px;
+    }
+    #services {
+        padding: 40px;
+        h2 {
+            font-size: 36px;
+        }
+        .big {
+            flex-direction: row;
+            gap: 40px;
+            .card {
+                img {
+                    width: 300px;
+                    height: 150px;
+                }
             }
         }
-        #hero {
-            padding-left: 60px;
-            padding-bottom: 90px;
-            nav {
-                flex-direction: row;
-                gap: 450px;
-            }
-            .reference {
-                flex-direction: row;
-                gap: 10px;
-            }
-            .logo {
-                height: 110px;
+    }
+    #subscribe {
+        flex-direction: row;
+        gap: 40px;
+        .part1 {
+            padding-top: 50px;
+        }
+    }
+    #in-touch {
+        flex-direction: row;
+        gap: 100px;
+        .part1 {
+            width: 100%;
+            img {
+                height: 100%;
                 width: auto;
             }
-            .collector {
-                h1 {
-                    font-size: 52px;
-                }
-                h6 {
-                    font-size: 32px;
-                }
-            }
-            .images {
-                flex-direction: row;
-                gap: 20px;
-                .short {
-                    display: block;
-                    .sh2 {
-                        padding-top: 15px;
-                    }
-                    img {
-                        -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
-                        height: 150px;
-                        width: 280px;
-                    }
-                }
-                .big {
-                    img {
-                        -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
-                        height: 315px;
-                        width: 280px;
-                    }
-                }
-                .regular {
-                    padding-top: 115px;
-                    display: block;
-                    img {
-                        -webkit-box-reflect: below 3px linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
-                        height: 200px;
-                        width: 280px;
-                    }
-                }
-            }
         }
-        #passion {
-            flex-direction: row;
-            padding: 40px;
-        }
-        #services {
-            padding: 40px;
-            h2 {
-                font-size: 36px;
-            }
-            .big {
-                flex-direction: row;
-                gap: 40px;
-                .card {
-                    img {
-                        width: 300px;
-                        height: 150px;
-                    }
-                }
-            }
-        }
-        #subscribe {
-            flex-direction: row;
-            gap: 40px;
-            .part1 {
-                padding-top: 50px;
-            }
-        }
-        #in-touch {
-            flex-direction: row;
-            gap: 100px;
-            .part1 {
-                width: 100%;
-                img {
-                    height: 100%;
-                    width: auto;
-                }
-            }
-            .part2 {
-                width: 100%;
-            }
-        }
-        #contact {
-            flex-direction: row;
-            gap: 40px;
-            .div {
-                flex-direction: row;
-                gap: 20px;
-            }
-        }
-        footer {
-            text-align: center;
+        .part2 {
+            width: 100%;
         }
     }
+    #contact {
+        flex-direction: row;
+        gap: 40px;
+        .div {
+            flex-direction: row;
+            gap: 20px;
+        }
+    }
+    footer {
+        text-align: center;
+    }
+}
