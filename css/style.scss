@@ -377,7 +377,6 @@ input[type="checkbox"]:checked~.toggle .bar3 {
             img {
                 transform: scale(1);
                 transition: transform 5s;
-                ;
             }
         }
     }
@@ -1298,4 +1297,13 @@ footer {
     footer {
         text-align: center;
     }
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
 }
